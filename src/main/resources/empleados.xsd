@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tell.me/empleados"
+    xmlns:tns="http://tell.me/empleados" elementFormDefault="qualified">
+
+ <element name="AgregarEmpRequest">
+        <complexType>
+            <sequence>
+                <element name="nombre" type="string"></element>
+                <element name="puesto" type="string"></element>
+                <element name="horasTrabajo" type="int"></element>
+                <element name="salario" type="double"></element>
+            </sequence>
+        </complexType>
+    </element>
+    
+    <element name="AgregarEmpResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+        </element>
+
+        <element name="MostrarEmpRequest">
+        <complexType>
+            <sequence>
+                <element name="id" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+ <element name="MostrarEmpResponse">
+        <complexType>
+            <sequence>
+                <element name="nombre" type="string"></element>
+                <element name="puesto" type="string"></element>
+                <element name="horasTrabajo" type="int"></element>
+                <element name="Salario" type="double"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+
+<element name="EditarEmpRequest">
+        <complexType>
+            <sequence>
+                <element name="nombre" type="string"></element>
+                <element name="puesto" type="string"></element>
+                <element name="horasTrabajo" type="int"></element>
+                <element name="Salario" type="double"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+<element name="EditarEmpResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+        </element>
+
+
+        <element name="EliminarEmpRequest">
+        <complexType>
+            <sequence>
+              <element name="id" type="int"></element>
+            </sequence>
+        </complexType>
+    </element>
+
+<element name="EliminarEmpResponse">
+        <complexType>
+            <sequence>
+                <element name="respuesta" type="string"></element>
+            </sequence>
+        </complexType>
+        </element>
+
+       <element name="MostrarListaEmpResponse">
+        <complexType>
+            <sequence>
+                     <element name="id" type="int"></element>
+                     <element name="nombre" type="string"></element>
+                     <element name="puesto" type="string"></element>
+                     <element name="horasTrabajo" type="int"></element>
+                     <element name="Salario" type="double"></element>
+            </sequence>
+        </complexType>
+        </element>
+
+
+    </schema>
