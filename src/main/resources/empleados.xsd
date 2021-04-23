@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tell.me/empleados"
     xmlns:tns="http://tell.me/empleados" elementFormDefault="qualified">
+    
 
  <element name="AgregarEmpRequest">
         <complexType>

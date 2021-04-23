@@ -5,10 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.springframework.data.jpa.repository.Query;
+
 
 @Entity
-public class Tablaempleados {
+
+
+
+
+public class EmpleadosClass {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 Integer id;
@@ -18,14 +22,14 @@ Integer horasTrabajo;
 Double salario;
 
 
-public Tablaempleados(Integer id,Integer horasTrabajo, String nombre, String puesto,  Double salario) {
+//constructor
+public EmpleadosClass(Integer id,Integer horasTrabajo, String nombre, String puesto,  Double salario) {
     this.id = id;
     this.nombre = nombre;
     this.puesto = puesto;
     this.horasTrabajo = horasTrabajo;
     this.salario = salario;
 }
-
 
 
 public Integer getId() {
