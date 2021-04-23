@@ -45,6 +45,7 @@
 <element name="EditarEmpRequest">
         <complexType>
             <sequence>
+                <element name="id" type="int"></element>
                 <element name="nombre" type="string"></element>
                 <element name="puesto" type="string"></element>
                 <element name="horasTrabajo" type="int"></element>
