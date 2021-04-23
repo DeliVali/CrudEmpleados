@@ -117,10 +117,10 @@ public MostrarEmpResponse MostrarEmp(@RequestPayload MostrarEmpRequest peticion)
     boolean bus = repository.existsById(peticion.getId());
     if(bus){
       res = repository.getOne(peticion.getId());
-      respuesta.setNombre(res.nombre);
-      respuesta.setPuesto(res.puesto);
-      respuesta.setHorasTrabajo(res.horasTrabajo);
-      respuesta.setSalario(res.salario);
+      respuesta.setNombre(res.getNombre());
+      respuesta.setPuesto(res.getPuesto());
+      respuesta.setHorasTrabajo(res.getHorasTrabajo());
+      respuesta.setSalario(res.getSalario());
     }else{
     }
     return respuesta;
