@@ -30,6 +30,9 @@ public EmpleadosClass(Integer id,Integer horasTrabajo, String nombre, String pue
     this.horasTrabajo = horasTrabajo;
     this.salario = salario;
 }
+public EmpleadosClass() {
+    
+}
 
 
 public Integer getId() {

@@ -2,7 +2,7 @@
 // Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.2.7 
 // Visite <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
-// Generado el: 2021.04.22 a las 08:55:50 PM CDT 
+// Generado el: 2021.04.23 a las 03:10:09 AM CDT 
 //
 
 
@@ -25,6 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="puesto" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="horasTrabajo" type="{http://www.w3.org/2001/XMLSchema}int"/>
@@ -39,6 +40,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "id",
     "nombre",
     "puesto",
     "horasTrabajo",
@@ -47,6 +49,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "EditarEmpRequest")
 public class EditarEmpRequest {
 
+    protected int id;
     @XmlElement(required = true)
     protected String nombre;
     @XmlElement(required = true)
@@ -54,6 +57,22 @@ public class EditarEmpRequest {
     protected int horasTrabajo;
     @XmlElement(name = "Salario")
     protected double salario;
+
+    /**
+     * Obtiene el valor de la propiedad id.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Define el valor de la propiedad id.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
+    }
 
     /**
      * Obtiene el valor de la propiedad nombre.
