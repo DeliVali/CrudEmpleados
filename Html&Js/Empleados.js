@@ -19,7 +19,7 @@ function AgregarEmpIni(){
 //Agregar Empleados
 function agregarEmp(){
     AgregarEmpIni()
-    axios.post('http://localhost:8080//ws/empleados.wsdl', mensaje,{
+    axios.post('http://ec2-34-228-56-203.compute-1.amazonaws.com:8080//ws/empleados', mensaje,{
         headers:{
             'Content-Type' : 'text/xml'
         }
@@ -61,7 +61,7 @@ function EliminarEmpIni(){
 //Eliminar Empleados
 function eliminarEmp(){
     EliminarEmpIni()
-    axios.post('http://localhost:8080//ws/empleados.wsdl', mensaje,{
+    axios.post('http://ec2-34-228-56-203.compute-1.amazonaws.com:8080//ws/empleados', mensaje,{
         headers:{
             'Content-Type' : 'text/xml'
         }
@@ -111,7 +111,7 @@ function EditarEmpIni(){
 //Editar Empleados
 function editarEmp(){
     EditarEmpIni()
-    axios.post('http://localhost:8080//ws/empleados.wsdl', mensaje,{
+    axios.post('http://ec2-34-228-56-203.compute-1.amazonaws.com:8080//ws/empleados', mensaje,{
         headers:{
             'Content-Type' : 'text/xml'
         }
@@ -152,7 +152,7 @@ function MostrarEmpIni(){
 //Mostrar empleados
 function mostrarEmp(){
     MostrarEmpIni()
-    axios.post('http://localhost:8080//ws/empleados.wsdl', mensaje,{
+    axios.post('http://ec2-34-228-56-203.compute-1.amazonaws.com:8080//ws/empleados', mensaje,{
         headers:{
             'Content-Type' : 'text/xml'
         }
@@ -163,16 +163,18 @@ function mostrarEmp(){
         var puesto = document.createElement("h3");
         var horTrab = document.createElement("h3");
         var salario = document.createElement("h3");
-        nombre.innerHTML = 'Nombre: ' +  + "<br>";
-        puesto.innerHTML = 'Puesto: ' + +"<br>";
-        horTrab.innerHTML = 'Horas de trabajo: ' + "<br>";
-        salario.innerHTML = 'Salario: ' + "<br>";
+        var response2=mostrarEmpResp(response.data);
+        nombre.innerHTML = 'Nombre: ' + response2[0] + "<br>";
+        puesto.innerHTML = 'Puesto: ' + response2[1]+"<br>";
+        horTrab.innerHTML = 'Horas de trabajo: ' +response2[2]+ "<br>";
+        salario.innerHTML = 'Salario: ' +response2[3]+ "<br>";
         mainContainer.appendChild(nombre);
         mainContainer.appendChild(puesto);
         mainContainer.appendChild(horTrab);
         mainContainer.appendChild(salario);
-        console.log(mostrarEmpResp(response.data))
-
+        
+        console.log(mostrarEmpResp(response.data));
+        
     })
     .catch(err => console.log(err));
 }
@@ -183,12 +185,11 @@ function mostrarEmpResp(rXml){
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(rXml,"text/xml");
     var data= [
-     xmlDoc.getElementsByTagName("ns2:nombre")[0].childNodes[0].nodeValue,
+    xmlDoc.getElementsByTagName("ns2:nombre")[0].childNodes[0].nodeValue,
      xmlDoc.getElementsByTagName("ns2:puesto")[0].childNodes[0].nodeValue,
      xmlDoc.getElementsByTagName("ns2:horasTrabajo")[0].childNodes[0].nodeValue,
      xmlDoc.getElementsByTagName("ns2:Salario")[0].childNodes[0].nodeValue]
-     JSON.stringify(data);
-
+     
     return data
 }
 
