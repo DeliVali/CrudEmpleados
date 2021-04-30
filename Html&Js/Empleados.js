@@ -163,8 +163,8 @@ function mostrarEmp(){
         var puesto = document.createElement("h3");
         var horTrab = document.createElement("h3");
         var salario = document.createElement("h3");
-        nombre.innerHTML = 'Nombre: ' + response.data.nombre + "<br>";
-        puesto.innerHTML = 'Puesto: ' + "<br>";
+        nombre.innerHTML = 'Nombre: ' +  + "<br>";
+        puesto.innerHTML = 'Puesto: ' + +"<br>";
         horTrab.innerHTML = 'Horas de trabajo: ' + "<br>";
         salario.innerHTML = 'Salario: ' + "<br>";
         mainContainer.appendChild(nombre);
