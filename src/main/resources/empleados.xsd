@@ -79,10 +79,22 @@
         </complexType>
         </element>
 
+
+
+ <element name="MostrarListaEmpRequest">
+        <complexType>
+            <sequence>
+                     <element name="check" type="boolean"></element>
+                   
+            </sequence>
+        </complexType>
+        </element>
+
+
        <element name="MostrarListaEmpResponse">
         <complexType>
             <sequence>
-                     <element name="id" type="int"></element>
+                     <element name="id" type="int" ></element>
                      <element name="nombre" type="string"></element>
                      <element name="puesto" type="string"></element>
                      <element name="horasTrabajo" type="int"></element>

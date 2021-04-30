@@ -10,7 +10,6 @@ package me.tell.empleados;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="respuesta" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="check" type="{http://www.w3.org/2001/XMLSchema}boolean"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +35,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "respuesta"
+    "check"
 })
-@XmlRootElement(name = "EliminarEmpResponse")
-public class EliminarEmpResponse {
+@XmlRootElement(name = "MostrarListaEmpRequest")
+public class MostrarListaEmpRequest {
 
-    @XmlElement(required = true)
-    protected String respuesta;
+    protected boolean check;
 
     /**
-     * Obtiene el valor de la propiedad respuesta.
+     * Obtiene el valor de la propiedad check.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getRespuesta() {
-        return respuesta;
+    public boolean isCheck() {
+        return check;
     }
 
     /**
-     * Define el valor de la propiedad respuesta.
+     * Define el valor de la propiedad check.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setRespuesta(String value) {
-        this.respuesta = value;
+    public void setCheck(boolean value) {
+        this.check = value;
     }
 
 }

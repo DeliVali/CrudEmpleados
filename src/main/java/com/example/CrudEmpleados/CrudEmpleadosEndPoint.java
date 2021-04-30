@@ -19,6 +19,7 @@ import me.tell.empleados.EliminarEmpRequest;
 import me.tell.empleados.EliminarEmpResponse;
 import me.tell.empleados.MostrarEmpRequest;
 import me.tell.empleados.MostrarEmpResponse;
+import me.tell.empleados.MostrarListaEmpRequest;
 import me.tell.empleados.MostrarListaEmpResponse;
 
 @Endpoint
@@ -136,20 +137,21 @@ public MostrarEmpResponse MostrarEmp(@RequestPayload MostrarEmpRequest peticion)
   
 @Transactional
 @ResponsePayload
-public MostrarListaEmpResponse MostrarListaEmpResponse(){
-    MostrarListaEmpResponse respuesta = new MostrarListaEmpResponse();
+public MostrarListaEmpResponse MostrarListaEmpResponse(@RequestPayload MostrarListaEmpRequest peticion){
+    
     List<EmpleadosClass> res = new ArrayList<EmpleadosClass>();
     EmpleadosClass aux = new EmpleadosClass();
     res = repository.findAll();
+    MostrarListaEmpResponse respuesta[]= new MostrarListaEmpResponse[res.size()];
     for(int i=0; i<res.size(); i++){
       aux = res.get(i);
-      respuesta.setId(aux.id);
-      respuesta.setNombre(aux.nombre);
-      respuesta.setPuesto(aux.puesto);
-      respuesta.setHorasTrabajo(aux.horasTrabajo);
-      respuesta.setSalario(aux.salario);
+      respuesta[i].setId(aux.id);
+      respuesta[i].setNombre(aux.nombre);
+      respuesta[i].setPuesto(aux.puesto);
+      respuesta[i].setHorasTrabajo(aux.horasTrabajo);
+      respuesta[i].setSalario(aux.salario);
     }
-    return respuesta;   
+    return respuesta[0];   
   }
 }
 
