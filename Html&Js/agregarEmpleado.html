@@ -6,24 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Empleados</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <form >
-    <label for="Nombre">Nombre </label>
-    <input id="Nombre" type="text">
-    <br>
-    <label for="Puesto">Puesto</label>
-    <input id="Puesto" type="text">
-    <br>
-    <label for="HorasTrabajo">Horas de trabajo</label>
-    <input id="HorasTrabajo" type="number">
-    <br>
-    <label for="Salario">Salario</label>
-    <input id="Salario" type="number">
-<br>
-<input type="button" value="Hacer Petición " onclick="agregarEmp()">
-
-</form>
-<script src="Empleados.js"></script>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h2>Agregar empleado</h2>
+                    </div>
+                    <p>Ingresar los datos de el empleado correspondiente</p>
+                    <form >
+                        <div class="form-group">
+                        <label for="Nombre">Nombre </label>
+                        <input id="Nombre" type="text" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label for="Puesto">Puesto</label>
+                        <input id="Puesto" type="text" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label for="HorasTrabajo">Horas de trabajo</label>
+                        <input id="HorasTrabajo" type="number" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label for="Salario">Salario</label>
+                        <input id="Salario" type="number" class="form-control">
+                        </div>
+                    <br>
+                    <input type="button" class="btn btn-success btn-lg btn-block" value="Hacer Petición " onclick="agregarEmp()">
+                    </form>
+                    <script src="Empleados.js"></script>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-outline-dark">Regresar</a>
+        </div>
+    </div>
 </body>
 </html>

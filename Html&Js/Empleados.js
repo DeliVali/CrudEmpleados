@@ -158,10 +158,19 @@ function mostrarEmp(){
         }
     })
     .then(function (response){
-
-      
-
-
+        var mainContainer = document.getElementById("myData");
+        var nombre = document.createElement("h3");
+        var puesto = document.createElement("h3");
+        var horTrab = document.createElement("h3");
+        var salario = document.createElement("h3");
+        nombre.innerHTML = 'Nombre: ' + response.data.nombre + "<br>";
+        puesto.innerHTML = 'Puesto: ' + "<br>";
+        horTrab.innerHTML = 'Horas de trabajo: ' + "<br>";
+        salario.innerHTML = 'Salario: ' + "<br>";
+        mainContainer.appendChild(nombre);
+        mainContainer.appendChild(puesto);
+        mainContainer.appendChild(horTrab);
+        mainContainer.appendChild(salario);
         console.log(mostrarEmpResp(response.data))
 
     })

@@ -6,20 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Empleado</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-
-
-<form >
-
-<label for="">Id</label>
-<input type="number"  id="Id">
-
-<input type="button" value="Eliminar " onclick="eliminarEmp()">
-
-
-</form>
-    <script src="Empleados.js"></script>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h2>Eliminar empleado</h2>
+                    </div>
+                    <p>Ingresar el ID de el empleado a eliminar</p>
+                    <form >
+                        <div class="form-group">
+                        <label for="Id">Id </label>
+                        <input id="Id" type="number" class="form-control">
+                        </div>
+                    <br>
+                    <input type="button" class="btn btn-success btn-lg btn-block" value="Eliminar " onclick="eliminarEmp()">
+                    </form>
+                    <script src="Empleados.js"></script>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-outline-dark">Regresar</a>        
+        </div>
+    </div>
 </body>
-
 </html>

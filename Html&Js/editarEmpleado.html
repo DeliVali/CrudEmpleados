@@ -6,27 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Empleado</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <form >
-    <label for="">Id</label>
-    <input type="number"  id="Id">
-    <br>
-    <label for="Nombre">Nombre </label>
-    <input id="Nombre" type="text">
-    <br>
-    <label for="Puesto">Puesto</label>
-    <input id="Puesto" type="text">
-    <br>
-    <label for="HorasTrabajo">Horas de trabajo</label>
-    <input id="HorasTrabajo" type="number">
-    <br>
-    <label for="Salario">Salario</label>
-    <input id="Salario" type="number">
-<br>
-<input type="button" value="Editar" onclick="mostrarEmp()">
-
-</form>
-<script src="Empleados.js"></script>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header">
+                        <h2>Editar empleado</h2>
+                    </div>
+                    <p>Ingresar los datos de el empleado a modificar</p>
+                    <form >
+                        <div class="form-group">
+                        <label for="Id">Id </label>
+                        <input id="Id" type="number" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label for="Nombre">Nombre </label>
+                        <input id="Nombre" type="text" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label for="Puesto">Puesto</label>
+                        <input id="Puesto" type="text" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label for="HorasTrabajo">Horas de trabajo</label>
+                        <input id="HorasTrabajo" type="number" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                        <label for="Salario">Salario</label>
+                        <input id="Salario" type="number" class="form-control">
+                        </div>
+                    <br>
+                    <input type="button" class="btn btn-success btn-lg btn-block" value="Editar" onclick="mostrarEmp()">
+                    </form>
+                    <script src="Empleados.js"></script>
+                </div>
+            </div>
+            <a href="index.html" class="btn btn-outline-dark">Regresar</a>      
+        </div>
+    </div>
 </body>
 </html>
