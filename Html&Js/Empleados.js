@@ -223,7 +223,25 @@ function mostrarListaEmp(){
         console.log(response2);
 for (let i = 0; i < response2.id.length; i++) {
     console.log(response2.name[i]);
+    var mainContainer = document.getElementById("myData");
+    var td = document.createElement("td");
+    td.innerHTML = response2.id[i];
+    var td1 = document.createElement("td");
+    td1.innerHTML = response2.name[i];
+    var td2 = document.createElement("td");
+    td2.innerHTML = response2.puesto[i];
+    var td3 = document.createElement("td");
+    td3.innerHTML = response2.horasT[i];
+    var td4 = document.createElement("td");
+    td4.innerHTML = response2.salario[i];
+    var tr = document.createElement("tr");
     
+    mainContainer.appendChild(td);
+    mainContainer.appendChild(td1);
+    mainContainer.appendChild(td2);
+    mainContainer.appendChild(td3);
+    mainContainer.appendChild(td4);
+    mainContainer.appendChild(tr);
 }
 
       
