@@ -236,23 +236,20 @@ for (let i = 0; i < response2.id.length; i++) {
 function mostrarListaEmpResp(rXml){
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(rXml,"text/xml");
-    let data
+    
     var id=[]
     var name=[] 
     var puesto=[]
     var horasT=[]
     var salario=[]
 for (let i = 0; i < xmlDoc.getElementsByTagName("ns2:id").length; i++) {
-
-
         id[i]=name[i]=xmlDoc.getElementsByTagName("ns2:id")[i].childNodes[0].nodeValue
         name[i]=xmlDoc.getElementsByTagName("ns2:nombre")[i].childNodes[0].nodeValue
         puesto[i]= xmlDoc.getElementsByTagName("ns2:puesto")[i].childNodes[0].nodeValue,
         horasT[i]= xmlDoc.getElementsByTagName("ns2:horasTrabajo")[i].childNodes[0].nodeValue,
         salario[i]= xmlDoc.getElementsByTagName("ns2:Salario")[i].childNodes[0].nodeValue
     
-}
-              
+}         
     return {
 id,name,puesto,horasT,salario
     }
