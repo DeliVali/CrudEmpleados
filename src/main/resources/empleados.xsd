@@ -94,11 +94,11 @@
        <element name="MostrarListaEmpResponse">
         <complexType>
             <sequence>
-                     <element name="id" type="int" ></element>
-                     <element name="nombre" type="string"></element>
-                     <element name="puesto" type="string"></element>
-                     <element name="horasTrabajo" type="int"></element>
-                     <element name="Salario" type="double"></element>
+                     <element name="id" type="int" maxOccurs="unbounded" ></element>
+                     <element name="nombre" type="string" maxOccurs="unbounded" ></element>
+                     <element name="puesto" type="string" maxOccurs="unbounded" ></element>
+                     <element name="horasTrabajo" type="int" maxOccurs="unbounded" ></element>
+                     <element name="Salario" type="double" maxOccurs="unbounded" ></element>
             </sequence>
         </complexType>
         </element>

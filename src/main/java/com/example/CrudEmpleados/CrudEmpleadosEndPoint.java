@@ -139,19 +139,31 @@ public MostrarEmpResponse MostrarEmp(@RequestPayload MostrarEmpRequest peticion)
 @ResponsePayload
 public MostrarListaEmpResponse MostrarListaEmpResponse(@RequestPayload MostrarListaEmpRequest peticion){
     
+  List<Integer> idList = new ArrayList<Integer>();
+  List<String> nombreList = new ArrayList<String>();
+  List<String> puestoList = new ArrayList<String>();
+  List<Integer> horasTList = new ArrayList<Integer>();
+  List<Double> salarioList = new ArrayList<Double>();
+
     List<EmpleadosClass> res = new ArrayList<EmpleadosClass>();
     EmpleadosClass aux = new EmpleadosClass();
     res = repository.findAll();
-    MostrarListaEmpResponse respuesta[]= new MostrarListaEmpResponse[res.size()];
+  MostrarListaEmpResponse respuesta = new MostrarListaEmpResponse();
     for(int i=0; i<res.size(); i++){
       aux = res.get(i);
-      respuesta[i].setId(aux.id);
-      respuesta[i].setNombre(aux.nombre);
-      respuesta[i].setPuesto(aux.puesto);
-      respuesta[i].setHorasTrabajo(aux.horasTrabajo);
-      respuesta[i].setSalario(aux.salario);
+        idList.add(aux.getId());
+        nombreList.add(aux.getNombre());
+        puestoList.add(aux.getPuesto());
+        horasTList.add(aux.getHorasTrabajo());
+        salarioList.add(aux.getSalario());
     }
-    return respuesta[0];   
+    respuesta.setId(idList);
+      respuesta.setNombre(nombreList);
+      respuesta.setPuesto(puestoList);
+      respuesta.setHorasTrabajo(horasTList);
+      respuesta.setSalario(salarioList);
+     
+    return respuesta;   
   }
 }
 

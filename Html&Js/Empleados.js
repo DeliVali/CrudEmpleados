@@ -194,3 +194,51 @@ function mostrarEmpResp(rXml){
 }
 
 
+
+function MostrarListaEmpIni(){
+    mensaje=
+'<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">'+
+    '<Body>'+
+        '<MostrarListaEmpRequest xmlns="http://tell.me/empleados">'+
+            '<check>[boolean]</check>'
+        '</MostrarListaEmpRequest>'+
+    '</Body>'+ 
+'</Envelope>' 
+
+}
+
+
+function mostrarListaEmp(){
+    MostrarListaEmpIni()
+    axios.post('http://localhost:8080//ws/empleados', mensaje,{
+        headers:{
+            'Content-Type' : 'text/xml'
+        }
+    })
+    .then(function (response){
+
+        console.log(mostrarEmpResp(response.data));
+    })
+    .catch(err => console.log(err));
+}
+
+
+// Respuesta Mostrar Empleados
+function mostrarListaEmpResp(rXml){
+    var parser = new DOMParser();
+    var xmlDoc = parser.parseFromString(rXml,"text/xml");
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+    }
+    var name= [
+    xmlDoc.getElementsByTagName("ns2:nombre")[0].childNodes[0].nodeValue,
+     xmlDoc.getElementsByTagName("ns2:puesto")[0].childNodes[0].nodeValue,
+     xmlDoc.getElementsByTagName("ns2:horasTrabajo")[0].childNodes[0].nodeValue,
+     xmlDoc.getElementsByTagName("ns2:Salario")[0].childNodes[0].nodeValue]
+     
+    return data
+}
+
+
+
