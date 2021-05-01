@@ -200,12 +200,13 @@ function MostrarListaEmpIni(){
 '<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">'+
     '<Body>'+
         '<MostrarListaEmpRequest xmlns="http://tell.me/empleados">'+
-            '<check>[boolean]</check>'
+            '<check>true</check>'
         '</MostrarListaEmpRequest>'+
     '</Body>'+ 
 '</Envelope>' 
 
 }
+
 
 
 function mostrarListaEmp(){
@@ -217,7 +218,7 @@ function mostrarListaEmp(){
     })
     .then(function (response){
 
-        console.log(mostrarEmpResp(response.data));
+        console.log(mostrarListaEmpResp(response.data));
     })
     .catch(err => console.log(err));
 }
@@ -227,17 +228,15 @@ function mostrarListaEmp(){
 function mostrarListaEmpResp(rXml){
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(rXml,"text/xml");
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
+  
+
+        var name= [
+            xmlDoc.getElementsByTagName("ns2:nombre")[0].childNodes[0].nodeValue]
         
-    }
-    var name= [
-    xmlDoc.getElementsByTagName("ns2:nombre")[0].childNodes[0].nodeValue,
-     xmlDoc.getElementsByTagName("ns2:puesto")[0].childNodes[0].nodeValue,
-     xmlDoc.getElementsByTagName("ns2:horasTrabajo")[0].childNodes[0].nodeValue,
-     xmlDoc.getElementsByTagName("ns2:Salario")[0].childNodes[0].nodeValue]
+  
      
-    return data
+     
+    return name
 }
 
 
