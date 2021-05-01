@@ -200,7 +200,7 @@ function MostrarListaEmpIni(){
 '<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">'+
     '<Body>'+
         '<MostrarListaEmpRequest xmlns="http://tell.me/empleados">'+
-            '<check>[boolean]</check>'
+            '<check>true</check>'+
         '</MostrarListaEmpRequest>'+
     '</Body>'+ 
 '</Envelope>' 
@@ -208,7 +208,9 @@ function MostrarListaEmpIni(){
 }
 
 
+
 function mostrarListaEmp(){
+    
     MostrarListaEmpIni()
     axios.post('http://localhost:8080//ws/empleados', mensaje,{
         headers:{
@@ -217,7 +219,14 @@ function mostrarListaEmp(){
     })
     .then(function (response){
 
-        console.log(mostrarEmpResp(response.data));
+        var response2=mostrarListaEmpResp(response.data);
+        console.log(response2);
+for (let i = 0; i < response2.id.length; i++) {
+    console.log(response2.name[i]);
+    
+}
+
+      
     })
     .catch(err => console.log(err));
 }
@@ -227,17 +236,26 @@ function mostrarListaEmp(){
 function mostrarListaEmpResp(rXml){
     var parser = new DOMParser();
     var xmlDoc = parser.parseFromString(rXml,"text/xml");
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        
+    let data
+    var id=[]
+    var name=[] 
+    var puesto=[]
+    var horasT=[]
+    var salario=[]
+for (let i = 0; i < xmlDoc.getElementsByTagName("ns2:id").length; i++) {
+
+
+        id[i]=name[i]=xmlDoc.getElementsByTagName("ns2:id")[i].childNodes[0].nodeValue
+        name[i]=xmlDoc.getElementsByTagName("ns2:nombre")[i].childNodes[0].nodeValue
+        puesto[i]= xmlDoc.getElementsByTagName("ns2:puesto")[i].childNodes[0].nodeValue,
+        horasT[i]= xmlDoc.getElementsByTagName("ns2:horasTrabajo")[i].childNodes[0].nodeValue,
+        salario[i]= xmlDoc.getElementsByTagName("ns2:Salario")[i].childNodes[0].nodeValue
+    
+}
+              
+    return {
+id,name,puesto,horasT,salario
     }
-    var name= [
-    xmlDoc.getElementsByTagName("ns2:nombre")[0].childNodes[0].nodeValue,
-     xmlDoc.getElementsByTagName("ns2:puesto")[0].childNodes[0].nodeValue,
-     xmlDoc.getElementsByTagName("ns2:horasTrabajo")[0].childNodes[0].nodeValue,
-     xmlDoc.getElementsByTagName("ns2:Salario")[0].childNodes[0].nodeValue]
-     
-    return data
 }
 
 
