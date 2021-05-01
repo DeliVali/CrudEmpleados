@@ -213,7 +213,7 @@ function MostrarListaEmpIni(){
 function mostrarListaEmp(){
     
     MostrarListaEmpIni()
-    axios.post('http://localhost:8080//ws/empleados', mensaje,{
+    axios.post('http://ec2-34-228-56-203.compute-1.amazonaws.com:8080//ws/empleados', mensaje,{
         headers:{
             'Content-Type' : 'text/xml'
         }
